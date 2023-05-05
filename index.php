@@ -1,3 +1,21 @@
+<?php
+function generaPassword($passLength)
+{
+    $poolCaratteri = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%^&*';
+    $password = '';
+    for ($i = 0; $i < $passLength; $i++) {
+        $carattere = $poolCaratteri[rand(0, strlen($poolCaratteri) - 1)];
+        $password .= $carattere;
+    }
+    return $password;
+}
+
+
+
+
+?>
+
+
 <!doctype html>
 <html lang="en">
 
@@ -13,8 +31,34 @@
 
 </head>
 
-<body>
+<body class="bg-dark text-light">
+    <div class="container mt-5">
+        <h1 class="text-danger text-center">PASS GENERATOR</h1>
 
+        <form class="d-flex align-items-center justify-content-center mt-5" action="index.php" method="get">
+            <label class="m-2" for="numPass">Inserire la lunghezza della password qui: </label>
+            <input class="w-50" placeholder="min:8 max:32" type="number" name="numPass" id="numPass" min="8" max="32">
+            <button type="submit" class="btn btn-danger m-2">Genera Password</button>
+        </form>
+
+        <div class="d-flex align-items-center justify-content-center mt-5">
+
+            <?php
+
+            if (isset($_GET['numPass'])) {
+                $passLength = $_GET['numPass'];
+                $password = generaPassword($passLength);
+                echo $password;
+
+                //   var_dump($password);
+            }
+
+            ?>
+
+        </div>
+
+
+    </div>
 
 
 

@@ -1,13 +1,7 @@
-<?php
-include './partials/functions.php'
-    ?>
-<!doctype html>
-<html lang="en">
-
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>strong pass generator</title>
+    <title>Create Pass</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
         integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -18,14 +12,31 @@ include './partials/functions.php'
 
 <body class="bg-dark text-light">
     <div class="container mt-5">
-        <h1 class="text-danger text-center">PASS GENERATOR</h1>
-        <form class="d-flex align-items-center justify-content-center mt-5" action="pagePass.php" method="get">
-            <label class="m-2" for="numPass">Inserire la lunghezza della password qui: </label>
-            <input class="w-50" placeholder="min:8 max:32" type="number" name="numPass" id="numPass" min="8" max="32">
-            <button type="submit" class="btn btn-danger m-2">Genera Password</button>
-        </form>
+        <h1 class="text-danger text-center">Ciao! ecco la password che mi hai chiesto!</h1>
+
+        <div class="d-flex align-items-center justify-content-center mt-5">
+            <?php
+            session_start();
+
+            if (!empty($_SESSION['password'])) {
+
+
+                include './partials/resultPass.php';
+
+
+            }
+            ?>
+        </div>
+
 
     </div>
+
+
+
+
+
+
+
 </body>
 
 </html>

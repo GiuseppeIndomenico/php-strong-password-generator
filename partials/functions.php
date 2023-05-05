@@ -1,4 +1,5 @@
 <?php
+session_start();
 function generaPassword($passLength)
 {
     $poolCaratteri = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%^&*';
@@ -10,7 +11,7 @@ function generaPassword($passLength)
     return $password;
 }
 
-
+$_SESSION['password'];
 
 
 ?>

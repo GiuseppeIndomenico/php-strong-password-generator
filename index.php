@@ -1,6 +1,3 @@
-<?php
-include './partials/functions.php'
-    ?>
 <!doctype html>
 <html lang="en">
 

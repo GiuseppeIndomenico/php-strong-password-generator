@@ -1,3 +1,10 @@
+<?php
+session_start();
+include './partials/functions.php'
+
+    ?>
+
+
 <!doctype html>
 <html lang="en">
 
@@ -16,13 +23,30 @@
 <body class="bg-dark text-light">
     <div class="container mt-5">
         <h1 class="text-danger text-center">PASS GENERATOR</h1>
-        <form class="d-flex align-items-center justify-content-center mt-5" action="pagePass.php" method="get">
+
+        <form class="d-flex align-items-center justify-content-center mt-5" action="index.php" method="get">
             <label class="m-2" for="numPass">Inserire la lunghezza della password qui: </label>
             <input class="w-50" placeholder="min:8 max:32" type="number" name="numPass" id="numPass" min="8" max="32">
             <button type="submit" class="btn btn-danger m-2">Genera Password</button>
         </form>
 
+        <div class="d-flex align-items-center justify-content-center mt-5">
+
+            <?php
+            include './partials/resultPass.php'
+                ?>
+
+        </div>
+
+
     </div>
+
+
+
+
+
+
+
 </body>
 
 </html>

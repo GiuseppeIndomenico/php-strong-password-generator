@@ -12,21 +12,25 @@
 
 <body class="bg-dark text-light">
     <div class="container mt-5">
-        <h1 class="text-danger text-center">Ciao! ecco la password che mi hai chiesto!</h1>
+        <h1 class="text-success text-center display-3 fw-bold">Ciao! ecco la password che mi hai chiesto!</h1>
 
         <div class="d-flex align-items-center justify-content-center mt-5">
-            <?php
-            session_start();
 
-            if (!empty($_SESSION['password'])) {
+            <span class="display-5 fw-semibold">
+
+                <?php
+                session_start();
+
+                if (!empty($_SESSION['password'])) {
+                    echo $_SESSION['password'];
 
 
-                include './partials/resultPass.php';
+                }
+                ?>
+            </span>
 
-
-            }
-            ?>
         </div>
+        <h2 class="text-danger text-center mt-5">PS. mi raccomando! non farla vedere a nessuno</h2>
 
 
     </div>

@@ -1,6 +1,8 @@
 <?php
 session_start();
 
+include './partials/functions.php';
+
 
 if (!empty($_SESSION['password'])) {
 

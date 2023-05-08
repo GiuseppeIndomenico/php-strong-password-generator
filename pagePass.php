@@ -30,9 +30,14 @@
             </span>
 
         </div>
-        <h2 class="text-danger text-center mt-5">PS. mi raccomando! non farla vedere a nessuno</h2>
+        <div class="d-flex align-items-center justify-content-center flex-column">
+            <h2 class="text-danger text-center m-5">PS. mi raccomando! non farla vedere a nessuno</h2>
 
+            <form action="index.php">
+                <button class="btn btn-light m-auto">torna alla home page</button>
+            </form>
 
+        </div>
     </div>
 
 
